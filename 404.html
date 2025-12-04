@@ -1,0 +1,24 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <script>
+    // Redirect logic: preserve full pathname + search + hash
+    (function() {
+      // The original broken URL (the one the user tried to visit)
+      var redirectPath = window.location.pathname + window.location.search + window.location.hash;
+
+      // Remove leading slash — optional but recommended for SPA routers
+      if (redirectPath.startsWith("/")) {
+        redirectPath = redirectPath.substring(1);
+      }
+
+      // Redirect to index.html, appending the original path after a #
+      // Your SPA router can read window.location.hash to resolve the route
+      window.location.replace("https://www.arinaonlakes.com.au" + redirectPath);
+    })();
+  </script>
+</head>
+<body>
+</body>
+</html>
